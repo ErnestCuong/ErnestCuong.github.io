@@ -1,10 +1,14 @@
 const wordDisplay = document.getElementById("word");
 const wrongLettersDisplay = document.getElementById("wrong-letters");
 const resetButton = document.getElementById("reset-button");
+const exitButton = document.getElementById("exit-button");
 const endGamePopup = document.getElementById("popup-container");
+const howToPlayPopup = document.getElementById("how-to-play-container");
 const notification = document.getElementById("notification-container");
 const finalMessage = document.getElementById("final-message");
+const howToPlayMessage = document.getElementById("how-to-play-message");
 const keyboardButtons = document.getElementById("keyboard");
+const howToPlayButton = document.getElementById("how-to-play-button");
 
 const figureParts = document.querySelectorAll(".figure-part");
 
@@ -114,6 +118,9 @@ function generateKeyboardButtons() {
         `</button>`
     )
     .join("");
+
+  //Also initialize the how-to-play-button
+  howToPlayButton.innerHTML = `<button onClick="showHowToPlay()">?</button>`;
 }
 
 function handleGuess(letter) {
@@ -134,6 +141,12 @@ function handleGuess(letter) {
   }
 
   showNotification();
+}
+
+function showHowToPlay() {
+  howToPlayMessage.innerText =
+    "In each round, you have to guess a word by choosing one letter at a time. The round finishes when you correctly guess the word while having no more than 5 wrong letters (win) / incorrectly guess with more than 5 wrong letters before you finish the word (lose). To choose a letter, simply press on the corresponding key (alternatively, you can also use a physical keyboard).";
+  howToPlayPopup.style.display = "flex";
 }
 
 //Keydown letter press
@@ -157,6 +170,11 @@ resetButton.addEventListener("click", () => {
   updateWrongLettersDisplay();
 
   endGamePopup.style.display = "none";
+});
+
+//Exit the how-to-play popup
+exitButton.addEventListener("click", () => {
+  howToPlayPopup.style.display = "none";
 });
 
 updateWordDisplay();

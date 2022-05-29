@@ -82,6 +82,7 @@ h1{
     width: 20px;
 }
 
+.how-to-play-container,
 .popup-container{
     background-color: rgba(0,0,0,0.3);
     position: fixed;
@@ -94,6 +95,7 @@ h1{
     justify-content: center;
 }
 
+.how-to-play-popup,
 .popup{
     background-color: #2980b9;
     border-radius: 5px;
@@ -117,6 +119,24 @@ h1{
 }
 
 .popup button:focus{
+    outline: 0;
+}
+
+.how-to-play-popup button{
+    cursor: pointer;
+    background-color: #fff;
+    color: #2980b9;
+    border: 0;
+    margin-top: 20px;
+    padding: 12px 20px;
+    font-size: 16px;
+}
+
+.how-to-play-popup button:active{
+    transform: scale(0.98);
+}
+
+.how-to-play-popup button:focus{
     outline: 0;
 }
 
@@ -159,3 +179,23 @@ h1{
     transform: translateY(1px);
 }
 
+.how-to-play-button{
+    margin: 20px;
+    text-align: center;
+}
+
+.how-to-play-button button{
+    background-color: #2980b9;
+    color: #fff;
+    margin: 5px;
+    border: 0;
+    border-radius: 50%;
+}
+
+.how-to-play-button button:hover{
+    background-color: #2472a4;
+}
+
+.how-to-play-button button:active{
+    transform: translateY(1px);
+}
