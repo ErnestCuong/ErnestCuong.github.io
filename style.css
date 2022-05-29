@@ -21,7 +21,7 @@ body{
     background-color: #4f345a;
     min-height: 100%;
     text-align: center;
-    overflow: auto;
+    overflow-y: auto;
 }
 
 h1{
